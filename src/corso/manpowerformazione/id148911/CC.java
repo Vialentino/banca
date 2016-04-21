@@ -3,6 +3,8 @@ package corso.manpowerformazione.id148911;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javax.swing.JOptionPane;
+
 class Movimento {
 	private String data;
 	private Calendar ora;
@@ -104,11 +106,21 @@ public class CC {
 	}
 	
 	public void visualizzaSaldoMovimenti(){
-		
+		JOptionPane.showMessageDialog(null, "Saldo: "+saldo+"\n"+"Lista movimenti: \n"+toString(movimenti));
 	}
 	
-	public void registraCarta(){
-		
+	public void registraCarta(Carta c){
+		if(c.getCC().equals(this))
+			carte.add(c);
+		System.err.println("La carta non appartiene a questo conto");
+	}
+	
+	public String toString(ArrayList<Movimento> mov){
+		String s="";
+		for(Movimento m : mov){
+			s+=m.getImporto()+" "+m.getCausale()+" "+m.getData()+" "+m.getOra()+"\n";
+		}
+		return s;
 	}
 	
 	
