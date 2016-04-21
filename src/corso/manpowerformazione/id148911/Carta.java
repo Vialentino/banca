@@ -12,9 +12,23 @@ public class Carta {
 	protected final double maxGO;
 	protected final double maxMI;
 	protected final double maxMO;
+	protected int stato;
+	
+	public int getStato() {
+		return stato;
+	}
+
+	public void cambiaStato(int stato) {
+		this.stato = stato;
+	}
+
+	
+
+
+
 	
 	
-	public Carta(String pin, CC cc, String intestatario, String scadenza, Sportello sportello, double commissione, double GI, double GO, double MI, double MO){
+	public Carta(String pin, CC cc, String intestatario, String scadenza, Sportello sportello, double commissione, double GI, double GO, double MI, double MO, int stato){
 		this.pin = pin;
 		this.cc = cc;
 		this.intestatario = intestatario;
@@ -24,10 +38,29 @@ public class Carta {
 		this.maxGO=GO;
 		this.maxMI=MI;
 		this.maxMO=MO;
+		this.stato=stato;
 	}
 	
+
+	public boolean checkPin(String pin){
+		return (this.pin==pin);
+	}
+	
+	public int checkTetti(double movimenti){
+		if (cc.getBanca().equals(sportello.getId())){	
+			if (movimenti<=maxMI) return 2;	
+			if (movimenti<=maxGI) return 1;
+			return 0;
+		}else{
+			if (movimenti<=maxMO) return 2;	
+			if (movimenti<=maxGO) return 1;
+			return 0;
+		}
+	}
+
 	public void collegaSportello(Sportello sportello){
 		this.sportello = sportello;
+
 	}
 
 	
