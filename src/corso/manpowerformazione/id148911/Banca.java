@@ -1,4 +1,4 @@
-package src.corso.manpowerformazione.id148911;
+package corso.manpowerformazione.id148911;
 
 public class Banca {
 

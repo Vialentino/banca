@@ -13,7 +13,7 @@
 Banca
 --
 - nome: String
--cliente[]:Cliente
+-cliente[]:Persona
 - sportello:Sportello
 --
 addCliente()
@@ -41,6 +41,8 @@ delCc()
 -fido:double
 -carte[]:Carte
 -movimenti[]:Movimenti
+-banca:Banca
+-stato:String
 --
 aggSaldo()
 addCarta()
@@ -93,7 +95,7 @@ checkTetti()
     </coordinates>
     <panel_attributes>Sportello
 --
-id:String
+id:Banca
 disponibilita:int
 tessere:Carta
 --
