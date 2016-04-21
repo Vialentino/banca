@@ -6,7 +6,7 @@ public class Carta {
 	private final CC cc;
 	private final String intestatario;
 	private final String scadenza;
-	private final Sportello sportello;
+	private Sportello sportello;
 	private final double commissione;
 	private final double maxGI;
 	private final double maxGO;
@@ -20,11 +20,15 @@ public class Carta {
 		this.intestatario = intestatario;
 		this.scadenza = scadenza;
 		this.commissione = commissione;
-		this.sportello = sportello;
 		this.maxGI=GI;
 		this.maxGO=GO;
 		this.maxMI=MI;
 		this.maxMO=MO;
 	}
+	
+	public void collegaSportello(Sportello sportello){
+		this.sportello = sportello;
+	}
 
+	
 }
