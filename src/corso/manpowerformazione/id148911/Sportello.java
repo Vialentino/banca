@@ -43,6 +43,7 @@ public class Sportello {
     	if(carta.checkTetti()==0){
     		if(importoRichiesto<=carta.getCC().getSaldo()){
     			if(importoRichiesto <= disponibilita){
+    				//carta.getCC().addMovimento(Movimento(data,ora,causale,importo,dove));
         			System.out.println("Operazione andata a buon fine. Lei ha prelevato"+importoRichiesto);
        		        return importoRichiesto;
        		     }
