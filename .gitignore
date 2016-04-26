@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 /bin/
-=======
 .classpath
 .settings/
-bin/
+.project
 
->>>>>>> terza
