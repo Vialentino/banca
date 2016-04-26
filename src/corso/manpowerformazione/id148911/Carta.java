@@ -8,12 +8,68 @@ public class Carta {
 	protected final String scadenza;
 	protected Sportello sportello;
 	protected final double commissione;
-	protected final double maxGI;
-	protected final double maxGO;
-	protected final double maxMI;
-	protected final double maxMO;
+	protected  double maxGI;
+	protected  double maxGO;
+	protected  double maxMI;
+	protected  double maxMO;
 	protected int stato;
 	
+	public double getMaxGI() {
+		return maxGI;
+	}
+
+	public void setMaxGI(double maxGI) {
+		this.maxGI = maxGI;
+	}
+
+	public double getMaxGO() {
+		return maxGO;
+	}
+
+	public void setMaxGO(double maxGO) {
+		this.maxGO = maxGO;
+	}
+
+	public double getMaxMI() {
+		return maxMI;
+	}
+
+	public void setMaxMI(double maxMI) {
+		this.maxMI = maxMI;
+	}
+
+	public double getMaxMO() {
+		return maxMO;
+	}
+
+	public void setMaxMO(double maxMO) {
+		this.maxMO = maxMO;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public CC getCc() {
+		return cc;
+	}
+
+	public String getIntestatario() {
+		return intestatario;
+	}
+
+	public String getScadenza() {
+		return scadenza;
+	}
+
+	public double getCommissione() {
+		return commissione;
+	}
+
+	public void setStato(int stato) {
+		this.stato = stato;
+	}
+
 	public int getStato() {
 		return stato;
 	}
@@ -28,7 +84,7 @@ public class Carta {
 
 	
 	
-	public Carta(String pin, CC cc, String intestatario, String scadenza, Sportello sportello, double commissione, double GI, double GO, double MI, double MO, int stato){
+	public Carta(String pin, CC cc, String intestatario, String scadenza, double commissione, double GI, double GO, double MI, double MO, int stato){
 		this.pin = pin;
 		this.cc = cc;
 		this.intestatario = intestatario;

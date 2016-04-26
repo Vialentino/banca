@@ -1,13 +1,19 @@
 package corso.manpowerformazione.id148911;
 
-public class Cliente {
+import java.util.ArrayList;
+import corso.manpowerformazione.id148911.CC;
+import corso.manpowerformazione.id148911.Persona;
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+public class Cliente extends Persona{
+	
+	 ArrayList<CC> conti;
+	 
+	 public Cliente(String nome, String cognome, String cf, CC ... conti){
+		 
+		 super(nome,cognome,cf);
+		 for (CC i : conti){
+			    this.conti.add(i);
+		      }
+	 }
+	
 }

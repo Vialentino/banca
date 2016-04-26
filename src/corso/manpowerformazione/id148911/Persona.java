@@ -1,13 +1,15 @@
 package corso.manpowerformazione.id148911;
 
 public class Persona {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	  String nome;
+	  String cognome;
+	  String cf;
+	
+	 public Persona(String nome, String cognome, String cf){
+		  
+		  this.nome=nome;
+		  this.cognome=cognome;
+		  this.cf=cf;
+	  }	  
 
 }
