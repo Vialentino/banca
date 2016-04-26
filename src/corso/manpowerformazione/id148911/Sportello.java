@@ -113,20 +113,48 @@ public class Sportello {
     			System.out.println("Inserisci importo desiderato");
     			Scanner input2 = new Scanner(System.in);
     			double importoRichiesto = input2.nextDouble();
-    			double denaroInUscita = preleva(importoRichiesto);
-    			if(denaroInUscita !=0){
-    				LocalDateTime oggi=LocalDateTime.now();
-    				String data = 
+    			if (importoRichiesto<=0){
+    				System.out.println("Importo desiderato negativo. Carta in espulsione");
+    				espelliCarta();
+    			}
+    			else{
+    			    double denaroInUscita = preleva(importoRichiesto);
+    			    if(denaroInUscita !=0){
+    				    LocalDateTime oggi=LocalDateTime.now();
+    				    String data = 
     						(oggi.getDayOfMonth()+"/"+
     				         oggi.getMonth().getValue()+"/"+
     				         oggi.getYear());
-    				LocalTime adesso=LocalTime.now();
-    				String ora =(adesso.getHour()+":"+adesso.getMinute());
-    				String causale = "prelievo";
-    				carta.getCC().addMovimento(Movimento(data,ora,causale,-importoRichiesto,dove));
+    				    LocalTime adesso=LocalTime.now();
+    				    String ora =(adesso.getHour()+":"+adesso.getMinute());
+    				    String causale = "prelievo";
+    				    carta.getCC().addMovimento(Movimento(data,ora,causale,-importoRichiesto,dove));
+    			   }
     			}
     		}
-    		else if (Scelta == 2);
+    		else if (Scelta == 2){
+    			System.out.println("Inserisci importo versato");
+    			Scanner input2 = new Scanner(System.in);
+    			double importoVersato = input2.nextDouble();
+    			if (importoVersato<=0){
+    				System.out.println("Importo versato negativo. Carta in espulsione");
+    				espelliCarta();
+    			}
+    			else{
+    			    double denaroInEntrata = versa(importoVersato);
+    			    if(denaroInEntrata !=0){
+    				    LocalDateTime oggi=LocalDateTime.now();
+    				    String data = 
+    						(oggi.getDayOfMonth()+"/"+
+    				         oggi.getMonth().getValue()+"/"+
+    				         oggi.getYear());
+    				    LocalTime adesso=LocalTime.now();
+    				    String ora =(adesso.getHour()+":"+adesso.getMinute());
+    				    String causale = "versamento";
+    				    carta.getCC().addMovimento(Movimento(data,ora,causale,importoVersato,dove));
+    			   }
+    			}
+    		}
     		else if (Scelta == 3);
     		
     	    espelliCarta();	
