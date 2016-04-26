@@ -1,3 +1,4 @@
+
 package corso.manpowerformazione.id148911;
 
 public class Main {
@@ -11,3 +12,4 @@ public class Main {
 	}
 
 }
+
