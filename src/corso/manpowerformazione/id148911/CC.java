@@ -7,19 +7,20 @@ import javax.swing.JOptionPane;
 
 class Movimento {
 	private String data;
-	private Calendar ora;
+	private String ora;
 	private String causale;
 	private double importo;
+	
 	public String getData() {
 		return data;
 	}
 	public void setData(String data) {
 		this.data = data;
 	}
-	public Calendar getOra() {
+	public String getOra() {
 		return ora;
 	}
-	public void setOra(Calendar ora) {
+	public void setOra(String ora) {
 		this.ora = ora;
 	}
 	public String getCausale() {
@@ -35,6 +36,7 @@ class Movimento {
 		this.importo = importo;
 	}
 }
+
 
 public class CC {
 	private Banca banca;
